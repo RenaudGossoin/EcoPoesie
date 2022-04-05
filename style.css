@@ -11,11 +11,29 @@
 };
 
 .markerButton{
-    position: absolute;
+    /* position: absolute; */
     top: 20px;
     right: 20px;
     margin-left: 50%;
     padding: 10px;
     z-index: 99999;
-    background-color: crimson;
+    background-color: rgb(27, 220, 20);
+}
+
+#testZ-Index{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    width: 200 ;
+    height: 100;
+    z-index: 9999;
+    /*background-color: crimson;*/
+}
+
+.rowButtonText{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
 }
