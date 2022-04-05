@@ -52,6 +52,8 @@ let white = false;
 let red = false;
 let markerEau = {};
 let clikMaker = {};
+let markerBati = {};
+let markerExtraction = {};
 
 function showBlue() {
   if (!blue) {
@@ -62,7 +64,7 @@ function showBlue() {
       .addTo(map)
       .bindPopup("Pour afficher les points bleus");
     blue = true;
-  } else if (blue) {
+  } else {
     map.removeLayer(markerEau);
     map.removeLayer(clikMaker);
     console.log(blue);
@@ -70,11 +72,30 @@ function showBlue() {
   }
 }
 
-const markerBati = L.marker([12.85837, 10.294481], { icon: iconBati })
-  .addTo(map)
-  .bindPopup("markerBati");
-const markerExtraction = L.marker([22.734371, 1.9625], { icon: iconExtraction })
-  .addTo(map)
-  .bindPopup("markerExtraction");
+function showWhite() {
+  if (!white) {
+    markerBati = L.marker([12.85837, 10.294481], { icon: iconBati })
+      .addTo(map)
+      .bindPopup("markerBati");
+    white = true;
+  } else {
+    map.removeLayer(markerBati);
+    white = false;
+  }
+}
+
+function showRed() {
+  if (!red) {
+    markerExtraction = L.marker([22.734371, 1.9625], {
+      icon: iconExtraction,
+    })
+      .addTo(map)
+      .bindPopup("markerExtraction");
+    red = true;
+  } else {
+    map.removeLayer(markerExtraction);
+    red = false;
+  }
+}
 
 // bouton pour afficher les points sur la carte
